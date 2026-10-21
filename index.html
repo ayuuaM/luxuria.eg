@@ -1,86 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#dcdddd">
-    <meta name="description" content="A curated selection of one-of-a-kind designer fashion in Egypt.">
-    <title>LUXURIA — Curated designer fashion</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="bar">
-      <a class="mark" href="#" aria-label="LUXURIA home">LUXURIA</a>
-      <nav class="bar-nav" aria-label="Main navigation">
-        <a href="#catalog">Shop</a>
-        <a href="#how">How it works</a>
-      </nav>
-      <button class="bag-btn" id="openBag" type="button" aria-controls="drawer">
-        Order list <span class="bag-count" id="bagCount" aria-live="polite">0</span>
-      </button>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the latest fashion collection at LUXURY.EG.">
+  <title>LUXURY.EG | Modern Fashion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home">LUXURY<span>.EG</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#how">How to Order</a>
+    </nav>
+    <a class="cart-link" href="#collection">BAG <span id="cart-count">0</span></a>
+  </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <h1 class="hero-word" id="hero-title">LUXURIA</h1>
-        <svg class="figure" viewBox="0 0 300 420" role="img" aria-label="Illustration of a person in a burgundy coat">
-          <path class="fig-body" d="M60 420 75 230q8-45 44-57h58q37 12 47 57l22 190z"/>
-          <path class="fig-hood" d="M100 174q-8-92 45-111 66-22 84 58l-12 70-39 32-59-5z"/>
-          <path class="fig-void" d="M142 93q31-21 56 8l-8 49q-15 25-40 4z"/>
-          <path class="fig-body" d="m116 188 34 45 36-45 18 14-30 76h-48l-29-76z"/>
-        </svg>
-        <div class="hero-copy">
-          <p class="hero-line">Considered pieces. One of a kind.</p>
-          <p>Discover a rotating edit of designer clothing and shoes, carefully selected for you.</p>
-          <a class="btn" href="#catalog">Explore the collection</a>
-        </div>
-      </section>
-
-      <section class="catalog" id="catalog" aria-labelledby="catalog-title">
-        <div class="section-head">
-          <div>
-            <p class="brand">THE CURRENT EDIT</p>
-            <h2 id="catalog-title">Find your piece</h2>
-          </div>
-          <div class="chips" id="chips" aria-label="Filter products"></div>
-        </div>
-        <div class="grid" id="grid" aria-live="polite"></div>
-        <noscript><p>Please enable JavaScript to browse the collection.</p></noscript>
-      </section>
-
-      <section class="how" id="how" aria-labelledby="how-title">
-        <p class="brand">A SIMPLE WAY TO SHOP</p>
-        <h2 id="how-title">How it works</h2>
-        <ol class="steps">
-          <li>Browse the collection and add the pieces you love to your order list.</li>
-          <li>Review your selection and send your order to us on WhatsApp.</li>
-          <li>We’ll get in touch to confirm availability and arrange the details.</li>
-        </ol>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div>
-        <p class="foot-mark">LUXURIA</p>
-        <p>Curated designer fashion.</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">THE NEW SEASON / 2026</p>
+        <h1>Luxury is in<br><em>every detail.</em></h1>
+        <p class="intro">Discover thoughtfully chosen pieces for your everyday style.</p>
+        <a class="button dark-button" href="#collection">EXPLORE COLLECTION <span>↗</span></a>
       </div>
-      <p>Questions? <a href="https://wa.me/201154178640">Message us on WhatsApp</a></p>
-    </footer>
+      <div class="hero-visual" aria-label="Fashion-inspired artwork">
+        <div class="circle"></div>
+        <div class="silhouette"></div>
+        <div class="silhouette-detail"></div>
+        <p class="visual-caption">OWN YOUR<br>EVERYDAY.</p>
+      </div>
+      <div class="hero-foot"><span>MODERN ESSENTIALS</span><span>MADE FOR YOUR STYLE</span></div>
+    </section>
 
-    <div class="scrim" id="scrim" hidden></div>
-    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
-      <div class="drawer-head">
-        <h2 id="drawer-title">Your order list</h2>
-        <button class="icon-btn" id="closeBag" type="button" aria-label="Close order list">Close</button>
+    <section class="collection section" id="collection">
+      <div class="section-title">
+        <div><p class="eyebrow">A FEW OF OUR FAVORITES</p><h2>Featured collection</h2></div>
+        <p>Simple pieces. Strong impression.</p>
       </div>
-      <p class="empty" id="empty">Your list is empty. Add a piece from the collection to get started.</p>
-      <ul class="lines" id="lines"></ul>
-      <div class="drawer-foot">
-        <button class="link-btn" id="clearBag" type="button">Clear list</button>
-        <div class="total"><span>Total</span><strong id="total">0 EGP</strong></div>
-        <a class="btn btn-wide disabled" id="sendWa" aria-disabled="true">Continue on WhatsApp</a>
+      <div class="products">
+        <article class="product">
+          <div class="product-image"><img src="images/dg-loafers.jpg" alt="Dolce & Gabbana tan suede and brown leather loafers"><span class="tag">SIZE 44</span></div>
+          <div class="product-info"><div><h3>Dolce &amp; Gabbana Loafers</h3><p>Suede &amp; leather · Made in Italy</p></div><strong>EGP 9,500</strong></div>
+          <button class="add-button" data-product="Dolce &amp; Gabbana Loafers" data-price="9500">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/gucci-brogues.jpg" alt="Gucci black leather tassel brogues on a platform sole"><span class="tag">SIZE 45</span></div>
+          <div class="product-info"><div><h3>Gucci Tassel Brogues</h3><p>Real leather · Made in Italy</p></div><strong>EGP 30,000</strong></div>
+          <button class="add-button" data-product="Gucci Tassel Brogues" data-price="30000">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/diesel-puffer.jpg" alt="Diesel gold metallic puffer jacket"><span class="tag">SIZE L</span></div>
+          <div class="product-info"><div><h3>Diesel Puffer Jacket</h3><p>Gold metallic finish</p></div><strong>EGP 9,000</strong></div>
+          <button class="add-button" data-product="Diesel Puffer Jacket" data-price="9000">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/diesel-navy-puffer.jpg" alt="Diesel navy puffer jacket with yellow zips"><span class="tag">SIZE L</span></div>
+          <div class="product-info"><div><h3>Diesel Puffer Jacket &mdash; Navy</h3><p>Nylon shell, contrast zips</p></div><strong>EGP 8,000</strong></div>
+          <button class="add-button" data-product="Diesel Puffer Jacket &mdash; Navy" data-price="8000">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/fendi-polo.jpg" alt="Fendi navy and white FF-knit polo shirt"><span class="tag">SIZE L</span></div>
+          <div class="product-info"><div><h3>Fendi Knit Polo</h3><p>FF monogram knit · Made in Italy</p></div><strong>EGP 9,500</strong></div>
+          <button class="add-button" data-product="Fendi Knit Polo" data-price="9500">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/versace-boot.jpg" alt="Versace black leather high-top boot with gold studs"><span class="tag">SIZE 44</span></div>
+          <div class="product-info"><div><h3>Versace Studded Boot</h3><p>Real leather, gold hardware · Made in Italy</p></div><strong>EGP 15,000</strong></div>
+          <button class="add-button" data-product="Versace Studded Boot" data-price="15000">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/dior-tee.jpg" alt="White Dior logo t-shirt"><span class="tag">SIZE L</span></div>
+          <div class="product-info"><div><h3>Dior Logo T-Shirt</h3><p>Cotton jersey · Made in Italy</p></div><strong>EGP 15,000</strong></div>
+          <button class="add-button" data-product="Dior Logo T-Shirt" data-price="15000">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/versace-blazer.jpg" alt="Black leather blazer"><span class="tag">SIZE 50</span></div>
+          <div class="product-info"><div><h3>Leather Blazer</h3><p>Made in Italy</p></div><strong>EGP 36,500</strong></div>
+          <button class="add-button" data-product="Leather Blazer" data-price="36500">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/armani-loafers.jpg" alt="Emporio Armani beige suede loafers"><span class="tag">SIZE 44</span></div>
+          <div class="product-info"><div><h3>Emporio Armani Loafers</h3><p>Suede, eagle logo</p></div><strong>EGP 9,500</strong></div>
+          <button class="add-button" data-product="Emporio Armani Loafers" data-price="9500">ADD TO BAG <span>+</span></button>
+        </article>
+        <article class="product">
+          <div class="product-image"><img src="images/balenciaga-tyrex.jpg" alt="Balenciaga Tyrex sneakers in original box"><span class="tag">SIZE 43</span></div>
+          <div class="product-info"><div><h3>Balenciaga Tyrex</h3><p>Black, white &amp; silver</p></div><strong>EGP 7,500</strong></div>
+          <button class="add-button" data-product="Balenciaga Tyrex" data-price="7500">ADD TO BAG <span>+</span></button>
+        </article>
       </div>
-    </aside>
-  </body>
+      <p id="cart-message" class="cart-message" aria-live="polite"></p>
+      <div class="cart-summary">
+        <div><span>Items in bag</span><strong id="summary-count">0</strong></div>
+        <div><span>Estimated total</span><strong id="cart-total">EGP 0</strong></div>
+        <button id="clear-cart" class="text-button" type="button">CLEAR BAG</button>
+      </div>
+    </section>
+
+    <section class="how section" id="how">
+      <p class="eyebrow">A SIMPLE EXPERIENCE</p>
+      <h2>Your style, your way.</h2>
+      <div class="steps">
+        <div><span>01</span><h3>Explore</h3><p>Browse the collection and find your favorites.</p></div>
+        <div><span>02</span><h3>Choose</h3><p>Review the items and prices before ordering.</p></div>
+        <div><span>03</span><h3>Contact us</h3><p>Message us to confirm availability and delivery.</p></div>
+      </div>
+      <a class="button light-button" href="#contact">GET IN TOUCH <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <a class="logo footer-logo" href="#home">LUXURY<span>.EG</span></a>
+    <p>Modern fashion. Timeless style.</p>
+    <a id="contact-link" class="contact-link" href="mailto:hello@example.com">CONTACT US ↗</a>
+    <small>© 2026 LUXURY.EG · Product names and prices are sample content.</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>
