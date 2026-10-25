@@ -1,0 +1,152 @@
+{
+  "currency": "EGP",
+  "products": [
+    {
+      "id": "dolce-gabbana-loafers",
+      "name": "Dolce & Gabbana Loafers",
+      "brand": "Dolce & Gabbana",
+      "category": "shoes",
+      "size": "44",
+      "price": 9500,
+      "madeInItaly": true,
+      "images": [
+        "images/dolce-gabbana-loafers/1.jpg",
+        "images/dolce-gabbana-loafers/2.jpg",
+        "images/dolce-gabbana-loafers/3.jpg"
+      ]
+    },
+    {
+      "id": "gucci-shoes",
+      "name": "Gucci Shoes",
+      "brand": "Gucci",
+      "category": "shoes",
+      "size": "45",
+      "price": 30000,
+      "madeInItaly": true,
+      "images": [
+        "images/gucci-shoes/1.jpg",
+        "images/gucci-shoes/2.jpg",
+        "images/gucci-shoes/3.jpg"
+      ]
+    },
+    {
+      "id": "diesel-jacket-gold",
+      "name": "Diesel Jacket (Gold)",
+      "brand": "Diesel",
+      "category": "jackets",
+      "size": "L",
+      "price": 9000,
+      "madeInItaly": false,
+      "images": [
+        "images/diesel-jacket-gold/1.jpg",
+        "images/diesel-jacket-gold/2.jpg"
+      ]
+    },
+    {
+      "id": "diesel-jacket-navy",
+      "name": "Diesel Jacket (Navy)",
+      "brand": "Diesel",
+      "category": "jackets",
+      "size": "L",
+      "price": 8000,
+      "madeInItaly": false,
+      "images": [
+        "images/diesel-jacket-navy/1.jpg",
+        "images/diesel-jacket-navy/2.jpg"
+      ],
+      "note_ar": "الحشو ريش نعام"
+    },
+    {
+      "id": "fendi-tshirt",
+      "name": "Fendi T-shirt",
+      "brand": "Fendi",
+      "category": "tshirts",
+      "size": "L",
+      "price": 9500,
+      "madeInItaly": true,
+      "images": [
+        "images/fendi-tshirt/1.jpg",
+        "images/fendi-tshirt/2.jpg",
+        "images/fendi-tshirt/3.jpg",
+        "images/fendi-tshirt/4.jpg"
+      ]
+    },
+    {
+      "id": "versace-half-boot",
+      "name": "Versace Half Boot (Real Leather)",
+      "brand": "Versace",
+      "category": "shoes",
+      "size": "44",
+      "price": 15000,
+      "madeInItaly": true,
+      "images": [
+        "images/versace-half-boot/1.jpg",
+        "images/versace-half-boot/2.jpg",
+        "images/versace-half-boot/3.jpg",
+        "images/versace-half-boot/4.jpg"
+      ]
+    },
+    {
+      "id": "dior-tshirt",
+      "name": "Dior T-shirt",
+      "brand": "Dior",
+      "category": "tshirts",
+      "size": "L",
+      "price": 15000,
+      "madeInItaly": true,
+      "images": [
+        "images/dior-tshirt/1.jpg",
+        "images/dior-tshirt/2.jpg",
+        "images/dior-tshirt/3.jpg"
+      ]
+    },
+    {
+      "id": "versace-blazer",
+      "name": "Versace Collection Blazer",
+      "brand": "Versace",
+      "category": "jackets",
+      "size": "50",
+      "price": 36500,
+      "madeInItaly": true,
+      "images": [
+        "images/versace-blazer/1.jpg",
+        "images/versace-blazer/2.jpg",
+        "images/versace-blazer/3.jpg",
+        "images/versace-blazer/4.jpg"
+      ]
+    },
+    {
+      "id": "emporio-armani-loafers",
+      "name": "Emporio Armani Loafers",
+      "brand": "Emporio Armani",
+      "category": "shoes",
+      "size": "44",
+      "price": 9500,
+      "madeInItaly": false,
+      "images": [
+        "images/emporio-armani-loafers/1.jpg",
+        "images/emporio-armani-loafers/2.jpg",
+        "images/emporio-armani-loafers/3.jpg",
+        "images/emporio-armani-loafers/4.jpg",
+        "images/emporio-armani-loafers/5.jpg"
+      ]
+    },
+    {
+      "id": "balenciaga-track",
+      "name": "Balenciaga Track",
+      "brand": "Balenciaga",
+      "category": "shoes",
+      "size": "43",
+      "price": 7500,
+      "madeInItaly": false,
+      "images": [
+        "images/balenciaga-track/1.jpg",
+        "images/balenciaga-track/2.jpg",
+        "images/balenciaga-track/3.jpg",
+        "images/balenciaga-track/4.jpg",
+        "images/balenciaga-track/5.jpg",
+        "images/balenciaga-track/6.jpg"
+      ]
+    }
+  ]
+}

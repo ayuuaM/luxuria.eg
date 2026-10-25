@@ -1,123 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the latest fashion collection at LUXURY.EG.">
-  <title>LUXURY.EG | Modern Fashion</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store</title>
+<style>
+  :root{
+    --bg:#f2f0ec; --ink:#16140f; --muted:#6d685e; --line:#d9d5cc; --accent:#16140f;
+    --font: "Helvetica Neue", Arial, system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#14130f; --ink:#f2f0ec; --muted:#9b958a; --line:#2c2a24; --accent:#f2f0ec;}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.4}
+  header{padding:28px 20px 12px;max-width:1200px;margin:auto}
+  h1{margin:0;font-size:clamp(28px,6vw,48px);letter-spacing:-.02em;font-weight:700}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .filters button{font:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--line);background:none;color:var(--ink);border-radius:999px;cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+  main{max-width:1200px;margin:auto;padding:12px 20px 60px;display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .card{background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+  .card .ph{aspect-ratio:3/4;overflow:hidden;background:var(--line)}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .card:hover img{transform:scale(1.03)} .card img{transition:transform .3s}
+  .card h2{font-size:16px;margin:10px 0 2px;font-weight:600}
+  .meta{color:var(--muted);font-size:14px}
+  .price{font-weight:700;margin-top:4px}
+  dialog{border:0;padding:0;max-width:900px;width:calc(100% - 24px);background:var(--bg);color:var(--ink)}
+  dialog::backdrop{background:rgba(0,0,0,.7)}
+  .dlg{display:grid;grid-template-columns:1.2fr 1fr}
+  .main-img{aspect-ratio:3/4;background:var(--line)} .main-img img{width:100%;height:100%;object-fit:contain}
+  .info{padding:20px;display:flex;flex-direction:column;gap:6px}
+  .thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .thumbs button{width:56px;height:72px;padding:0;border:2px solid transparent;background:none;cursor:pointer}
+  .thumbs button[aria-current="true"]{border-color:var(--accent)}
+  .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+  .close{align-self:flex-end;font:inherit;background:none;border:1px solid var(--line);color:var(--ink);padding:6px 12px;cursor:pointer}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media(max-width:640px){.dlg{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header class="header">
-    <a class="logo" href="#home">LUXURY<span>.EG</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#collection">Collection</a>
-      <a href="#how">How to Order</a>
-    </nav>
-    <a class="cart-link" href="#collection">BAG <span id="cart-count">0</span></a>
-  </header>
+<header>
+  <h1>Store</h1>
+  <div class="filters" id="filters"></div>
+</header>
+<main id="grid"></main>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">THE NEW SEASON / 2026</p>
-        <h1>Luxury is in<br><em>every detail.</em></h1>
-        <p class="intro">Discover thoughtfully chosen pieces for your everyday style.</p>
-        <a class="button dark-button" href="#collection">EXPLORE COLLECTION <span>↗</span></a>
-      </div>
-      <div class="hero-visual" aria-label="Fashion-inspired artwork">
-        <div class="circle"></div>
-        <div class="silhouette"></div>
-        <div class="silhouette-detail"></div>
-        <p class="visual-caption">OWN YOUR<br>EVERYDAY.</p>
-      </div>
-      <div class="hero-foot"><span>MODERN ESSENTIALS</span><span>MADE FOR YOUR STYLE</span></div>
-    </section>
+<dialog id="dlg" aria-label="Product details">
+  <div class="dlg">
+    <div class="main-img"><img id="big" alt=""></div>
+    <div class="info">
+      <button class="close" id="close">Close</button>
+      <h2 id="d-name" style="margin:8px 0 0"></h2>
+      <div class="meta" id="d-meta"></div>
+      <div class="price" id="d-price"></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </div>
+</dialog>
 
-    <section class="collection section" id="collection">
-      <div class="section-title">
-        <div><p class="eyebrow">A FEW OF OUR FAVORITES</p><h2>Featured collection</h2></div>
-        <p>Simple pieces. Strong impression.</p>
-      </div>
-      <div class="products">
-        <article class="product">
-          <div class="product-image"><img src="images/dg-loafers.jpg" alt="Dolce & Gabbana tan suede and brown leather loafers"><span class="tag">SIZE 44</span></div>
-          <div class="product-info"><div><h3>Dolce &amp; Gabbana Loafers</h3><p>Suede &amp; leather · Made in Italy</p></div><strong>EGP 9,500</strong></div>
-          <button class="add-button" data-product="Dolce &amp; Gabbana Loafers" data-price="9500">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/gucci-brogues.jpg" alt="Gucci black leather tassel brogues on a platform sole"><span class="tag">SIZE 45</span></div>
-          <div class="product-info"><div><h3>Gucci Tassel Brogues</h3><p>Real leather · Made in Italy</p></div><strong>EGP 30,000</strong></div>
-          <button class="add-button" data-product="Gucci Tassel Brogues" data-price="30000">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/diesel-puffer.jpg" alt="Diesel gold metallic puffer jacket"><span class="tag">SIZE L</span></div>
-          <div class="product-info"><div><h3>Diesel Puffer Jacket</h3><p>Gold metallic finish</p></div><strong>EGP 9,000</strong></div>
-          <button class="add-button" data-product="Diesel Puffer Jacket" data-price="9000">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/diesel-navy-puffer.jpg" alt="Diesel navy puffer jacket with yellow zips"><span class="tag">SIZE L</span></div>
-          <div class="product-info"><div><h3>Diesel Puffer Jacket &mdash; Navy</h3><p>Nylon shell, contrast zips</p></div><strong>EGP 8,000</strong></div>
-          <button class="add-button" data-product="Diesel Puffer Jacket &mdash; Navy" data-price="8000">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/fendi-polo.jpg" alt="Fendi navy and white FF-knit polo shirt"><span class="tag">SIZE L</span></div>
-          <div class="product-info"><div><h3>Fendi Knit Polo</h3><p>FF monogram knit · Made in Italy</p></div><strong>EGP 9,500</strong></div>
-          <button class="add-button" data-product="Fendi Knit Polo" data-price="9500">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/versace-boot.jpg" alt="Versace black leather high-top boot with gold studs"><span class="tag">SIZE 44</span></div>
-          <div class="product-info"><div><h3>Versace Studded Boot</h3><p>Real leather, gold hardware · Made in Italy</p></div><strong>EGP 15,000</strong></div>
-          <button class="add-button" data-product="Versace Studded Boot" data-price="15000">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/dior-tee.jpg" alt="White Dior logo t-shirt"><span class="tag">SIZE L</span></div>
-          <div class="product-info"><div><h3>Dior Logo T-Shirt</h3><p>Cotton jersey · Made in Italy</p></div><strong>EGP 15,000</strong></div>
-          <button class="add-button" data-product="Dior Logo T-Shirt" data-price="15000">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/versace-blazer.jpg" alt="Black leather blazer"><span class="tag">SIZE 50</span></div>
-          <div class="product-info"><div><h3>Leather Blazer</h3><p>Made in Italy</p></div><strong>EGP 36,500</strong></div>
-          <button class="add-button" data-product="Leather Blazer" data-price="36500">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/armani-loafers.jpg" alt="Emporio Armani beige suede loafers"><span class="tag">SIZE 44</span></div>
-          <div class="product-info"><div><h3>Emporio Armani Loafers</h3><p>Suede, eagle logo</p></div><strong>EGP 9,500</strong></div>
-          <button class="add-button" data-product="Emporio Armani Loafers" data-price="9500">ADD TO BAG <span>+</span></button>
-        </article>
-        <article class="product">
-          <div class="product-image"><img src="images/balenciaga-tyrex.jpg" alt="Balenciaga Tyrex sneakers in original box"><span class="tag">SIZE 43</span></div>
-          <div class="product-info"><div><h3>Balenciaga Tyrex</h3><p>Black, white &amp; silver</p></div><strong>EGP 7,500</strong></div>
-          <button class="add-button" data-product="Balenciaga Tyrex" data-price="7500">ADD TO BAG <span>+</span></button>
-        </article>
-      </div>
-      <p id="cart-message" class="cart-message" aria-live="polite"></p>
-      <div class="cart-summary">
-        <div><span>Items in bag</span><strong id="summary-count">0</strong></div>
-        <div><span>Estimated total</span><strong id="cart-total">EGP 0</strong></div>
-        <button id="clear-cart" class="text-button" type="button">CLEAR BAG</button>
-      </div>
-    </section>
+<script src="products.js"></script>
+<script>
+  const { currency, products } = window.STORE;
+  const money = n => n.toLocaleString("en-US") + " " + currency;
+  const meta = p => [p.brand, "Size " + p.size, p.madeInItaly ? "Made in Italy" : null].filter(Boolean).join(", ");
+  const grid = document.getElementById("grid"), filters = document.getElementById("filters");
+  const dlg = document.getElementById("dlg");
 
-    <section class="how section" id="how">
-      <p class="eyebrow">A SIMPLE EXPERIENCE</p>
-      <h2>Your style, your way.</h2>
-      <div class="steps">
-        <div><span>01</span><h3>Explore</h3><p>Browse the collection and find your favorites.</p></div>
-        <div><span>02</span><h3>Choose</h3><p>Review the items and prices before ordering.</p></div>
-        <div><span>03</span><h3>Contact us</h3><p>Message us to confirm availability and delivery.</p></div>
-      </div>
-      <a class="button light-button" href="#contact">GET IN TOUCH <span>↗</span></a>
-    </section>
-  </main>
+  function render(cat){
+    grid.innerHTML = "";
+    products.filter(p => cat === "all" || p.category === cat).forEach(p => {
+      const b = document.createElement("button");
+      b.className = "card";
+      b.innerHTML = `<div class="ph"><img loading="lazy" src="${p.images[0]}" alt="${p.name}"></div>
+        <h2>${p.name}</h2><div class="meta">${meta(p)}</div><div class="price">${money(p.price)}</div>`;
+      b.onclick = () => openProduct(p);
+      grid.appendChild(b);
+    });
+  }
 
-  <footer class="footer" id="contact">
-    <a class="logo footer-logo" href="#home">LUXURY<span>.EG</span></a>
-    <p>Modern fashion. Timeless style.</p>
-    <a id="contact-link" class="contact-link" href="mailto:hello@example.com">CONTACT US ↗</a>
-    <small>© 2026 LUXURY.EG · Product names and prices are sample content.</small>
-  </footer>
-  <script src="script.js"></script>
+  const cats = ["all", ...new Set(products.map(p => p.category))];
+  const labels = {all:"All", shoes:"Shoes", jackets:"Jackets", tshirts:"T-shirts"};
+  cats.forEach((c, i) => {
+    const b = document.createElement("button");
+    b.textContent = labels[c] || c;
+    b.setAttribute("aria-pressed", i === 0);
+    b.onclick = () => {
+      [...filters.children].forEach(x => x.setAttribute("aria-pressed", x === b));
+      render(c);
+    };
+    filters.appendChild(b);
+  });
+
+  function openProduct(p){
+    const big = document.getElementById("big"), th = document.getElementById("thumbs");
+    document.getElementById("d-name").textContent = p.name;
+    document.getElementById("d-meta").textContent = meta(p) + (p.note_ar ? " | " + p.note_ar : "");
+    document.getElementById("d-price").textContent = money(p.price);
+    th.innerHTML = "";
+    const show = (src, btn) => {
+      big.src = src; big.alt = p.name;
+      [...th.children].forEach(x => x.setAttribute("aria-current", x === btn));
+    };
+    p.images.forEach((src, i) => {
+      const b = document.createElement("button");
+      b.innerHTML = `<img src="${src}" alt="Photo ${i + 1} of ${p.name}">`;
+      b.onclick = () => show(src, b);
+      th.appendChild(b);
+    });
+    show(p.images[0], th.children[0]);
+    dlg.showModal();
+  }
+  document.getElementById("close").onclick = () => dlg.close();
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+  render("all");
+</script>
 </body>
 </html>
